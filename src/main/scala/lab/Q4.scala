@@ -46,6 +46,24 @@ object Q4 {
     bank.addAccount(acc3)
     bank.addAccount(acc4)
     bank.addAccount(acc5)
-    
+
+    //Print a list of accounts with negative balances
+    val negativeAccounts = bank.accountsWithNegativeBalance
+    print("Accounts with negative balance: ")
+    negativeAccounts.foreach{ account =>
+      println("Account No:" + account.accountNo + " Balance: " + account.balance)
+    }
+
+    //Print the sum of all account balances
+    val totalBalance = bank.sumofBalance
+    println("Sum of all account balances is: " + totalBalance)
+
+    //Apply interest
+    bank.applyInterest()
+    //Print accounts after applying interest
+    print("Accounts balance after applying interest: ")
+    bank.accounts.foreach{ account =>
+      println("Account No:" + account.accountNo + " Balance: " + account.balance)
+    }
   }
 }
